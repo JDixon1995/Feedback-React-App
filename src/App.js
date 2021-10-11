@@ -1,5 +1,5 @@
 import './App.css';
-import {useState} from 'react';
+import React, {useState} from 'react';
 import Header from './Header.js'
 import Button from './Button.js';
 import Banner from './Banner.js';
@@ -12,17 +12,28 @@ const App = () => {
   const [ neutral, setNeutral ] = useState(0);
   const [ bad, setBad ] = useState(0);
 
+  const handleGoodClick = () => {
+    setGood( good + 1);
+  }
+
+  const handleNeutralClick = () => {
+    setNeutral( neutral + 1);
+  }
+
+  const handleBadClick = () => {
+    setBad( bad + 1);
+  }
 
   return (
     <div className="App">
       <Header />
-      <Button text="good" />
-      <Button text="neutral" />
-      <Button text="bad" />
+      <Button text="good" onClick={handleGoodClick} />
+      <Button text="neutral" onClick={handleNeutralClick} />
+      <Button text="bad" onClick={handleBadClick} />
       <Banner />
-      <StatNum text="good" />
-      <StatNum text="neutral" />
-      <StatNum text="bad" />
+      <StatNum text="good" counter={good} />
+      <StatNum text="neutral" counter={neutral} />
+      <StatNum text="bad" counter={bad} />
     </div>
   );
 }
