@@ -11,22 +11,27 @@ const App = () => {
   const [ good, setGood ] = useState(0);
   const [ neutral, setNeutral ] = useState(0);
   const [ bad, setBad ] = useState(0);
-  const [ all, setAll] = useState(0);
+  const [ all, setAll ] = useState(0);
+  const [ rating, setRating ] = useState(0);
 
   const handleGoodClick = () => {
     setGood( good + 1);
     setAll( all + 1)
+    setRating( rating + 1 );
   }
 
   const handleNeutralClick = () => {
     setNeutral( neutral + 1);
     setAll( all + 1);
+    setRating( rating + 0);
   }
 
   const handleBadClick = () => {
     setBad( bad + 1);
     setAll( all + 1);
+    setRating( rating - 1);
   }
+
 
   return (
     <div className="App">
@@ -39,6 +44,8 @@ const App = () => {
       <StatNum text="neutral" counter={neutral} />
       <StatNum text="bad" counter={bad} />
       <StatNum text="all" counter={all} />
+      <StatNum text="average" counter={rating} />
+      <StatNum text="positive" />
     </div>
   );
 }
