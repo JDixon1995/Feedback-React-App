@@ -44,8 +44,8 @@ const App = () => {
       <StatNum text="neutral" counter={neutral} />
       <StatNum text="bad" counter={bad} />
       <StatNum text="all" counter={all} />
-      <StatNum text="average" counter={rating} />
-      <StatNum text="positive" />
+      <StatNum text="average" counter={rating / all} />
+      <StatNum text="positive" counter={good / rating} />
     </div>
   );
 }
