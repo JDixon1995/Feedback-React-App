@@ -14,6 +14,9 @@ const App = () => {
   const [ all, setAll ] = useState(0);
   const [ rating, setRating ] = useState(0);
 
+  const average = rating / all;
+  const positive = good / rating;
+
   const handleGoodClick = () => {
     setGood( good + 1);
     setAll( all + 1)
@@ -44,8 +47,8 @@ const App = () => {
       <StatNum text="neutral" counter={neutral} />
       <StatNum text="bad" counter={bad} />
       <StatNum text="all" counter={all} />
-      <StatNum text="average" counter={rating / all} />
-      <StatNum text="positive" counter={good / rating} />
+      <StatNum text="average" counter={average} />
+      <StatNum text="positive" counter={positive} />
     </div>
   );
 }
