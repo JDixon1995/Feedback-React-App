@@ -3,8 +3,8 @@ import React, {useState} from 'react';
 import Header from './Header.js'
 import Button from './Button.js';
 import Banner from './Banner.js';
+import Statistics from './Statistics.js';
 import StatNum from './StatNum.js';
-
 
 const App = () => {
 
